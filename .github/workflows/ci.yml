@@ -14,8 +14,8 @@ jobs:
     strategy:
       matrix:
         distro:
-          - centos8
           - debian10
+          - debian12
 
     steps:
       - name: Check out the codebase.
