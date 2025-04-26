@@ -25,6 +25,14 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
+      
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Ensure Docker is running
+        run: |
+          sudo systemctl start docker
+          docker info
 
       - name: Install test dependencies
         run: pip3 install molecule docker yamllint ansible-lint
